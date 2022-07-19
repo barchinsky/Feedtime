@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_baby_bottle"
+        android:shortcutId="feed"
+        android:shortcutShortLabel="@string/feeding_feed_short_label">
+        <intent
+            android:action="android.intent.extra.shortcut.INTENT"
+            android:targetClass="com.borchik.feedtime.MainActivity"
+            android:targetPackage="com.borchik.feedtime">
+
+            <extra
+                android:name="feeding"
+                android:value="feed" />
+
+        </intent>
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_calendar"
+        android:shortcutId="add_feeding"
+        android:shortcutShortLabel="@string/feeding_add_feeding_short_label">
+        <intent
+            android:action="android.intent.action.ADD_FEEDING"
+            android:targetClass="com.borchik.feedtime.MainActivity"
+            android:targetPackage="com.borchik.feedtime">
+
+            <extra
+                android:name="feeding"
+                android:value="add_feeding" />
+        </intent>
+    </shortcut>
+</shortcuts>

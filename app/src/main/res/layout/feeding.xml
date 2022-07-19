@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="feeding"
+            type="com.borchik.infrastructure.db.FeedingEntity" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="4dp"
+        android:clipChildren="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="14dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_day"
+                android:gravity="center"
+                android:minHeight="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/feedingDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@{feeding.dateTime}"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="italic|bold"
+                    tools:text="10/21/234" />
+
+                <TextView
+                    android:id="@+id/interval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@{@string/feeding_interval(feeding.feedingInterval)}"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    tools:text="Interval: 2h" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/illustration"
+                android:layout_width="64dp"
+                android:layout_height="52dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="end|center"
+                android:layout_marginEnd="16dp"
+                tools:src="@drawable/il_day" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

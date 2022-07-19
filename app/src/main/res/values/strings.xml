@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Feedtime</string>
+    <string name="last_feed">Last feed %s</string>
+    <string name="feeding_interval">%s since last feeding</string>
+    <string name="avg_time_between_feedings">Avg. time between feedings: %s</string>
+    <string name="feeding_removed">Feeding removed</string>
+    <string name="feeding_added">Feeding added</string>
+    <string name="feeding_restored">Feeding restored</string>
+</resources>

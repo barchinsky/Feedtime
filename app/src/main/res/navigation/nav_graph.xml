@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboard">
+
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="com.borchik.dashboard.ui.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/dashboard">
+
+        <action
+            android:id="@+id/to_add_feeding"
+            app:destination="@id/add_feeding"
+            app:enterAnim="@anim/nav_enter_anim_btt"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popExitAnim="@anim/nav_exit_anim_ttb" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_feeding"
+        android:name="com.borchik.addFeeding.ui.AddFeedingFragment"
+        android:label="Add Feeding"
+        tools:layout="@layout/fragment_add_feeding">
+        <deepLink
+            android:id="@+id/add_feeding_deeplink"
+            android:autoVerify="false"
+            app:uri="www.borchik.ua"
+            app:action="android.intent.action.ADD_FEEDING" />
+    </fragment>
+
+    <action
+        android:id="@+id/to_add_feeding_global"
+        app:destination="@id/add_feeding"
+        app:popUpTo="@id/nav_graph" />
+</navigation>
